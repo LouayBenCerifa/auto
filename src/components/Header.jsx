@@ -21,21 +21,20 @@ function Header() {
         </div>
         
         <div className="header-icons">
-          <span><i className="far fa-user-circle"></i></span>
-          
-          {/* Icône panier avec compteur */}
-          <span 
-            className="cart-icon-container"
-            onClick={() => setIsCartOpen(true)}
-          >
-            <i className="fas fa-shopping-cart"></i>
-            {itemCount > 0 && (
-              <span className="cart-badge">{itemCount}</span>
-            )}
-          </span>
-          
-          <span><i className="fas fa-map-marker-alt"></i></span>
-        </div>
+  <span>👤</span>  {/* User icon */}
+  
+  <span 
+    className="cart-icon-container"
+    onClick={() => setIsCartOpen(true)}
+    style={{ position: 'relative', cursor: 'pointer' }}
+  >
+    🛒  {/* Cart icon */}
+    {itemCount > 0 && (
+      <span className="cart-badge">{itemCount}</span>
+    )}
+  </span>
+
+</div>
       </div>
     </header>
   );

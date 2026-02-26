@@ -142,7 +142,7 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--gray-500);
     font-size: 1.1rem;
     margin-top: -0.5rem;
-    margin-bottom: var(--space-xl);
+    margin-bottom: 0px;
 }
 
 /* --------------------------------------------
@@ -2199,4 +2199,56 @@ h1, h2, h3, h4, h5, h6 {
     .form-row {
         grid-template-columns: 1fr; 
     }
+}
+/* Header Icons with Emojis */
+.header-icons {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.header-icons span {
+    font-size: 1.8rem;  /* Size of emojis */
+    cursor: pointer;
+    transition: all 0.2s ease;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: transparent;
+}
+
+.header-icons span:hover {
+    background: rgba(200, 92, 23, 0.1);  /* Light orange background on hover */
+    transform: translateY(-2px);
+}
+
+/* Special style for cart icon container */
+.cart-icon-container {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Cart badge styling */
+.cart-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #e63946;  /* Red color */
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 600;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }

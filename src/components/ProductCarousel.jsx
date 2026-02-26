@@ -50,14 +50,14 @@ function ProductCarousel({ title, subtitle, products, compact = false }) {
 
   // Produits par défaut si aucun n'est fourni
   const defaultProducts = products || [
-    { badge: 'FREE OIL FILTER', icon: 'fa-oil-can', name: 'Mobil 1 5W-30', desc: 'Full Synthetic Motor Oil 5qt', price: '$28.99', offer: 'With purchase of 5qts' },
-    { badge: 'SALE', icon: 'fa-filter', name: 'FRAM Oil Filter', desc: 'Extra Guard PH3614', price: '$9.99', offer: 'When you buy 5qts' },
-    { badge: 'REWARDS', icon: 'fa-car-battery', name: 'DieHard Battery', desc: 'Gold 24F, 700 CCA', price: '$189.99', offer: 'Free installation' },
-    { badge: 'SAVE $20', icon: 'fa-tachometer-alt', name: 'Bosch Brake Pads', desc: 'QuietCast Ceramic - Front', price: '$45.99', offer: '$20 off with code' },
-    { badge: 'BESTSELLER', icon: 'fa-fan', name: 'Gates Belt Kit', desc: 'Serpentine Belt + Tensioner', price: '$89.99', offer: 'Limited time' },
-    { badge: 'FREE SHIPPING', icon: 'fa-bolt', name: 'NGK Spark Plugs', desc: 'Iridium IX - Set of 4', price: '$32.99', offer: 'OE quality' },
-    { badge: 'NEW', icon: 'fa-snowplow', name: 'Prestone Coolant', desc: '50/50 Prediluted 1 gal', price: '$14.99', offer: 'Buy 2 save 15%' },
-    { badge: 'SALE', icon: 'fa-wrench', name: 'Mechanic Tool Set', desc: '112-piece with case', price: '$79.99', offer: 'Was $129.99' },
+    { badge: 'FREE OIL FILTER', image: "/images/braded-oil.jpg", name: 'Mobil 1 5W-30', desc: 'Full Synthetic Motor Oil 5qt', price: '$28.99', offer: 'With purchase of 5qts' },
+    { badge: 'SALE', image: "/images/fram oil.jfif", desc: 'Extra Guard PH3614', price: '$9.99', offer: 'When you buy 5qts' },
+    { badge: 'REWARDS', image: "/images/die hard battery.jfif", name: 'DieHard Battery', desc: 'Gold 24F, 700 CCA', price: '$189.99', offer: 'Free installation' },
+    { badge: 'SAVE $20', image: "/images/ceramic pads.jfif", name: 'Bosch Brake Pads', desc: 'QuietCast Ceramic - Front', price: '$45.99', offer: '$20 off with code' },
+    { badge: 'BESTSELLER', image: "/images/gates-belt-kit.jpg", name: 'Gates Belt Kit', desc: 'Serpentine Belt + Tensioner', price: '$89.99', offer: 'Limited time' },
+    { badge: 'FREE SHIPPING', image: "/images/ngk-spark-plugs.jpg", name: 'NGK Spark Plugs', desc: 'Iridium IX - Set of 4', price: '$32.99', offer: 'OE quality' },
+    { badge: 'NEW', image: "/images/prestone-coolant.jpg", name: 'Prestone Coolant', desc: '50/50 Prediluted 1 gal', price: '$14.99', offer: 'Buy 2 save 15%' },
+    { badge: 'SALE', image: "/images/mechanic-tool-set.jpg", name: 'Mechanic Tool Set', desc: '112-piece with case', price: '$79.99', offer: 'Was $129.99' },
   ];
 
   // Fonction pour obtenir une icône par défaut basée sur l'index
@@ -102,14 +102,7 @@ function ProductCarousel({ title, subtitle, products, compact = false }) {
             <h2 className="section-title">{title}</h2>
             <p className="section-subtitle">{subtitle}</p>
           </div>
-          <div className="carousel-nav">
-            <button className="carousel-arrow prev" onClick={() => scroll('left')}>
-              <i className="fas fa-chevron-left"></i>
-            </button>
-            <button className="carousel-arrow next" onClick={() => scroll('right')}>
-              <i className="fas fa-chevron-right"></i>
-            </button>
-          </div>
+          
         </div>
 
         <div className={`products-horizontal-container`} ref={containerRef}>
@@ -125,8 +118,21 @@ function ProductCarousel({ title, subtitle, products, compact = false }) {
                 
                 {/* Image avec icône - TOUJOURS affichée */}
                 <div className={`product-img ${compact ? 'small' : ''}`}>
-                  <i className={`fas ${iconToShow}`} style={{ color: iconColor }}></i>
-                </div>
+  {product.image ? (
+    <img 
+      src={product.image} 
+      alt={product.name}
+      style={{
+        width: '100%',
+        height: '100%',
+        objectFit: 'cover',
+        borderRadius: '8px'
+      }}
+    />
+  ) : (
+    <i className={`fas ${product.icon || 'fa-oil-can'}`}></i>
+  )}
+</div>
                 
                 {/* Nom du produit - avec fallback */}
                 <h4>{product.name || "Nouveau produit"}</h4>
