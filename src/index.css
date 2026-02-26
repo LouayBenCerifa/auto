@@ -1,4 +1,7 @@
-/* src/index.css */
+
+html {
+    zoom: 0.85; /* Propriété non-standard mais supportée par la plupart des navigateurs */
+}
 * {
   margin: 0;
   padding: 0;
