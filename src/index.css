@@ -1717,3 +1717,24 @@ body {
         grid-template-columns: 1fr;
     }
 }
+/* Header compact pour mobile */
+@media (max-width: 767px) {
+    .header .container {
+        height: auto;
+        padding: 10px 15px;
+    }
+    
+    .logo-image {
+        height: 50px; /* Plus petit sur mobile */
+    }
+    
+    .header-icons span {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-image {
+        height: 40px;
+    }
+}
