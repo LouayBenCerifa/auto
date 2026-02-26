@@ -1738,3 +1738,270 @@ body {
         height: 40px;
     }
 }
+/* --------------------------------------------
+   ÉCHELLE DE BASE - AFFICHAGE COMPACT
+   -------------------------------------------- */
+
+:root {
+    /* Réduire la taille de base */
+    font-size: 14px; /* Au lieu de 16px par défaut */
+    
+    /* Ajuster les espacements */
+    --space-xs: 3px;
+    --space-sm: 6px;
+    --space-md: 12px;
+    --space-lg: 18px;
+    --space-xl: 24px;
+    --space-2xl: 36px;
+    --space-3xl: 48px;
+    
+    /* Réduire les largeurs maximales */
+    --container-max: 1300px; /* Au lieu de 1600px */
+}
+
+/* Réduire la taille des polies */
+body {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+h1 {
+    font-size: 2.2rem; /* Plus petit */
+}
+
+h2 {
+    font-size: 1.8rem;
+}
+
+h3 {
+    font-size: 1.4rem;
+}
+
+/* Conteneur plus étroit */
+.container {
+    max-width: 1300px;
+    padding: 0 20px;
+}
+
+/* Layout 2 colonnes plus compact */
+.layout-2col {
+    max-width: 1300px;
+    padding: 20px 20px;
+    gap: 20px;
+}
+
+/* Sidebar plus étroite */
+.sidebar-left {
+    flex: 0 0 280px; /* Au lieu de 320px */
+    top: 120px;
+    height: calc(100vh - 140px);
+}
+
+/* Menu plus compact */
+.menu-header-permanent {
+    padding: 12px;
+}
+
+.menu-header-permanent h3 {
+    font-size: 1rem;
+}
+
+.category-title-permanent {
+    padding: 10px 15px;
+    font-size: 0.85rem;
+}
+
+.submenu-permanent li a {
+    padding: 8px 15px 8px 42px;
+    font-size: 0.8rem;
+}
+
+/* Produits plus petits */
+.product-horizontal-card {
+    min-width: 220px;
+    max-width: 220px;
+    padding: 15px;
+}
+
+.product-horizontal-card.compact {
+    min-width: 180px;
+    max-width: 180px;
+}
+
+.product-img i {
+    font-size: 3.5rem;
+}
+
+.product-price {
+    font-size: 1.3rem;
+}
+
+/* Grille de produits plus compacte */
+.products-grid-detailed {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 15px;
+}
+
+.product-card-detailed {
+    padding: 0;
+}
+
+.product-image-detailed {
+    height: 150px;
+}
+
+.product-image-detailed i {
+    font-size: 4rem;
+}
+
+.product-info-detailed {
+    padding: 15px;
+}
+
+.product-name {
+    font-size: 1.1rem;
+}
+
+.current-price {
+    font-size: 1.4rem;
+}
+
+/* Page header plus compact */
+.page-title {
+    font-size: 2rem;
+}
+
+.page-subtitle {
+    font-size: 1rem;
+}
+
+/* Hero section plus compacte */
+.testing-card {
+    padding: 30px 25px;
+}
+
+.testing-card h3 {
+    font-size: 1.4rem;
+}
+
+.testing-card p {
+    font-size: 0.95rem;
+}
+
+/* Catégories plus compactes */
+.category-item {
+    padding: 12px 10px;
+    font-size: 0.85rem;
+}
+
+/* Footer plus compact */
+.footer-grid {
+    gap: 30px;
+}
+
+.footer-col h4 {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.footer-col p, 
+.footer-col a {
+    font-size: 0.85rem;
+}
+
+/* Page détail produit plus compacte */
+.product-detail-container {
+    padding: 30px;
+    gap: 30px;
+}
+
+.product-detail-image {
+    height: 300px;
+}
+
+.product-detail-image i {
+    font-size: 6rem;
+}
+
+.product-detail-title {
+    font-size: 2rem;
+}
+
+.product-detail-price .current-price {
+    font-size: 2rem;
+}
+
+/* Services plus compacts */
+.service-card {
+    padding: 25px;
+}
+
+.service-icon {
+    width: 60px;
+    height: 60px;
+}
+
+.service-icon i {
+    font-size: 2rem;
+}
+
+.service-card h3 {
+    font-size: 1.4rem;
+}
+
+/* À propos plus compact */
+.about-hero {
+    padding: 35px;
+}
+
+.about-hero h2 {
+    font-size: 2rem;
+}
+
+.about-hero p {
+    font-size: 1rem;
+}
+
+.value-card {
+    padding: 20px;
+}
+
+.value-card i {
+    font-size: 2.5rem;
+}
+
+.value-card h3 {
+    font-size: 1.2rem;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+}
+
+/* Boutons plus petits */
+.btn {
+    padding: 8px 20px;
+    font-size: 0.9rem;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 10px 24px;
+}
+
+.btn-small {
+    padding: 6px 16px;
+    font-size: 0.8rem;
+}
+
+/* Formulaires plus compacts */
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 10px 12px;
+    font-size: 0.9rem;
+}
+
+.btn-submit {
+    padding: 12px;
+    font-size: 1rem;
+}
