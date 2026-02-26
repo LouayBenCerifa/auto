@@ -25,7 +25,6 @@ function HomePage() {
   return (
     <>
       
-
       <ProductCarousel 
         title="FEATURED PRODUCTS" 
         subtitle="Shop our most popular auto parts"
