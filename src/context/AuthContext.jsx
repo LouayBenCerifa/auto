@@ -5,10 +5,9 @@ const AuthContext = createContext();
 
 // Configuration d'axios
 const api = axios.create({
-  baseURL: 'http://localhost:5000/api',
-  headers: {
-    'Content-Type': 'application/json'
-  }
+  baseURL: process.env.NODE_ENV === 'production'
+    ? 'https://oceana-api.onrender.com/api'  // ✅ VOTRE API
+    : 'http://localhost:5000/api',
 });
 
 // Intercepteur pour ajouter le token
