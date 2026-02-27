@@ -9,11 +9,27 @@ const authRoutes = require('./routes/auth');
 
 const app = express();
 
-// Middleware
+// ✅ Configuration CORS CORRECTE pour accepter votre frontend Vercel
+const allowedOrigins = [
+  'http://localhost:5173',
+  'http://localhost:3000',
+  'https://auto-puce.vercel.app'  // ✅ VOTRE FRONTEND EN LIGNE
+];
+
 app.use(cors({
-  origin: 'http://localhost:5173',
+  origin: function(origin, callback) {
+    // Autoriser les requêtes sans origin (comme les apps mobiles)
+    if (!origin) return callback(null, true);
+    
+    if (allowedOrigins.indexOf(origin) === -1) {
+      const msg = 'The CORS policy for this site does not allow access from the specified Origin.';
+      return callback(new Error(msg), false);
+    }
+    return callback(null, true);
+  },
   credentials: true
 }));
+
 app.use(express.json());
 
 // Connexion MongoDB
@@ -72,5 +88,5 @@ const createDefaultAdmin = async () => {
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
-  console.log(`🚀 Serveur démarré sur http://localhost:${PORT}`);
+  console.log(`🚀 Serveur démarré sur port ${PORT}`);
 });
